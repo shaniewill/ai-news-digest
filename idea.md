@@ -10,7 +10,7 @@
 
 | # | 项 | 决定 |
 |---|-----|------|
-| 1 | **Vault 路径** | `D:/Obsidian/Obsidian Vault` |
+| 1 | **Vault 路径** | 由 `config.yaml` 的 `vault.path` 配置（本地填绝对路径，`config.yaml` 已 gitignore） |
 | 2 | **语言比例** | **英文标题** + **英文专业术语保留** + **分析全文中文**；重要原始来源可附英文摘录/链接 |
 | 3 | **模型与开发方式** | 运行时 LLM 走 API（`config.yaml` 可配）；**本阶段用 Terminal 调用 Claude Code**，以 `idea.md` 为规格继续深化实现 |
 | 4 | **深度 / 广度** | **深度固定 5 条**；**广度宜多**（速览清单可 20–40 条，弱信号 3–5 条） |
@@ -254,7 +254,7 @@ AI_news/
 
 ### Phase 0 — 决策周 ✅ 已完成
 
-- [x] Vault 路径：`D:/Obsidian/Obsidian Vault`
+- [x] Vault 路径：由 `config.yaml` `vault.path` 配置（本地填绝对路径）
 - [x] 语言 / 深度 / 通知策略（见「零、已锁定决策」）
 - [ ] 运行时 LLM provider + API Key（实现阶段在 `config.yaml` / `.env` 填写）
 - [ ] 勾选 Tier 0 源清单（中文源、Reddit 实现时最终确认）
@@ -302,7 +302,7 @@ AI_news/
 
 ```yaml
 vault:
-  path: "D:/Obsidian/Obsidian Vault"
+  path: "REPLACE_WITH_YOUR_OBSIDIAN_VAULT_PATH"
   daily_dir: "AI_news/Daily"
   predictions_dir: "AI_news/Predictions"
   weekly_dir: "AI_news/Weekly"
@@ -363,7 +363,7 @@ claude
 ```text
 请阅读 idea.md（尤其「零、已锁定决策」和 Phase 1），在本仓库实现 MVP：
 - Python 3.11+，uv 管理依赖
-- config.example.yaml + .env.example（vault 已定为 D:/Obsidian/Obsidian Vault）
+- config.example.yaml + .env.example（vault 路径由用户在本地 `config.yaml` 填写绝对路径）
 - fetcher: HN + 一个官方 blog RSS + GitHub trending
 - SQLite 去重，输出到 vault 的 AI_news/Daily/YYYY-MM-DD.md
 - 日报格式：5 条英文标题+中文深度分析，20–35 条英文标题速览
@@ -405,7 +405,7 @@ claude
 ## 十三、下一步行动
 
 1. **Terminal 启动 Claude Code**（见 **10.5 节**），按 Phase 1 实现 MVP。
-2. 在 `D:/Obsidian/Obsidian Vault` 下首次运行后应自动生成 `AI_news/Daily/`（或由脚本创建）。
+2. 在你 `config.yaml` 配的 vault 根路径下首次运行后应自动生成 `AI_news/Daily/`（或由脚本创建）。
 3. 准备 `.env`：`ANTHROPIC_API_KEY` 或你选用的 provider（与 Claude Code 账号无关）。
 4. MVP 跑通 3 天后，再挂 Windows 任务计划（Phase 3）。
 

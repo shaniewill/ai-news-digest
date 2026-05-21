@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Hard constraints
 
-- **Vault path**：`D:/Obsidian/Obsidian Vault` — daily digest 写到 `AI_news/Daily/YYYY-MM-DD.md`，predictions 写到 `AI_news/Predictions/`，不要写到 vault 其他位置。
+- **Vault path**：由 `config.yaml` 的 `vault.path` 配置（占位 `REPLACE_WITH_YOUR_OBSIDIAN_VAULT_PATH`，本地填真实路径，`config.yaml` 已 gitignore）。daily digest 写到 `<vault>/AI_news/Daily/YYYY-MM-DD.md`，predictions 写到 `<vault>/AI_news/Predictions/`，不要写到 vault 其他位置。
 - **Language**：对话回复用中文；标题/术语/文件名/代码标识符用英文（idea.md 第 20–24 行）。LLM 生成的 digest 同规则：英文标题 + 中文分析 + 英文术语保留。
 - **Scope**：Phase 1 MVP 只做 HN + 1 个 blog RSS + GitHub trending，不引入 Twitter/X、arXiv、newsletter。Phase 5 自动发帖**当前禁止实现**。
 - **Output**：仅 Obsidian 静默落盘。不做邮件/Telegram/Slack 通知。
@@ -116,7 +116,7 @@ uv run python -m src.main weekly             # 周报
 
 - `agents/` — 三个 subagent：`fetcher-author`（加/改源）、`prompt-engineer`（调 prompt）、`digest-critic`（红队评估今日 digest 质量）
 - `skills/` — 五个用户向 skill：`/run-daily`、`/test-source`、`/preview-digest`、`/add-source`、`/review-digest`
-- `settings.json` — 权限白名单 + Obsidian MCP server（`obsidian-mcp` npm，指向 `D:/Obsidian/Obsidian Vault`）
+- `settings.json` — 权限白名单 + Obsidian MCP server（`obsidian-mcp` npm，指向你本地的 vault 路径）。仓库里只签入 `settings.example.json` 模板（vault 路径占位），本地 `settings.json` 已 gitignore。
 
 加新 source 走 `fetcher-author` 子 agent 或 `/add-source` skill 时，记得在 `src/fetchers/__init__.py` 的 `REGISTRY` 注册，并在 `config.example.yaml` + `config.yaml` 同步加配置块。
 

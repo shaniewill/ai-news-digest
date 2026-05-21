@@ -18,7 +18,7 @@ model: sonnet
 
 ## 工作流
 
-1. 读现有 prompt 和最近一次跑出来的 digest（`D:/Obsidian/Obsidian Vault/AI_news/Daily/`）找问题。
+1. 读现有 prompt 和最近一次跑出来的 digest（`<vault>/AI_news/Daily/`，vault 根从 `config.yaml` 取）找问题。
 2. 用 `uv run python -m src.main preview-digest --role <role> --sample fixtures/sample_items.json` 跑小样本（如果脚本支持）；否则用 `uv run python -c "..."` 直接调一次。
 3. 对比 before/after，简明列出变化点给用户。
 4. 改完后跑一次完整 dry-run 看上下游是否还兼容。

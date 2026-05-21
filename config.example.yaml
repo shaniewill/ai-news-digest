@@ -1,5 +1,9 @@
 vault:
-  path: "D:/Obsidian/Obsidian Vault"
+  # Absolute path to your local Obsidian vault root. Examples:
+  #   Windows: "D:/Obsidian/MyVault"
+  #   macOS:   "/Users/you/Documents/Obsidian/MyVault"
+  #   Linux:   "/home/you/Obsidian/MyVault"
+  path: "REPLACE_WITH_YOUR_OBSIDIAN_VAULT_PATH"
   daily_dir: "AI_news/Daily"
   weekly_dir: "AI_news/Weekly"
   predictions_dir: "AI_news/Predictions"

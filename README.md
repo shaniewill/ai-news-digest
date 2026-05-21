@@ -19,12 +19,14 @@
 输出写到 Obsidian vault：
 
 ```
-D:/Obsidian/Obsidian Vault/AI_news/
+<your-obsidian-vault>/AI_news/
 ├── Daily/YYYY-MM-DD.md
 ├── Weekly/YYYY-Www.md
 ├── Predictions/pred-YYYY-MM-DD-NN-<slug>.md
 └── Topics/<MOC>.md   (手维护)
 ```
+
+> Vault 根路径由 `config.yaml` 的 `vault.path` 配置。模板见 `config.example.yaml`。
 
 ## 快速开始
 

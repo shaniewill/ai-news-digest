@@ -19,7 +19,7 @@ model: sonnet
 
 ## 工作流
 
-1. Read 用户指定日期的 daily file（默认今天，在 `D:/Obsidian/Obsidian Vault/AI_news/Daily/`）。
+1. Read 用户指定日期的 daily file（默认今天，路径 `<vault>/AI_news/Daily/`，vault 根从 `config.yaml` 的 `vault.path` 取）。
 2. 对每条 deep item 给打分表 + 一句具体证据。
 3. 如果发现疑似幻觉（事实没在源链接里），用 WebFetch 抓原始链接验证。
 4. 最后给 3 条**最值得改的**改进建议，按"换 prompt"或"换 ranking"分类。

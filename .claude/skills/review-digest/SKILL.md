@@ -7,7 +7,7 @@ description: 红队评估一份已生成的 daily digest。用户说"评一下�
 
 执行步骤：
 
-1. 解析 date；构造 vault 路径 `D:/Obsidian/Obsidian Vault/AI_news/Daily/<date>.md`。
+1. 解析 date；构造 vault 路径 `<vault>/AI_news/Daily/<date>.md`（vault 根从 `config.yaml` `vault.path` 取）。
 2. 如果文件不存在，提示用户先跑 `/run-daily` 或换日期。
 3. 用 Agent 工具调 `digest-critic` subagent，把文件路径传过去，让它读 + 评。
 4. 把 critic 返回的打分表 + 3 条改进建议原样展示给用户。

@@ -1,0 +1,91 @@
+vault:
+  path: "D:/Obsidian/Obsidian Vault"
+  daily_dir: "AI_news/Daily"
+  weekly_dir: "AI_news/Weekly"
+  predictions_dir: "AI_news/Predictions"
+  topics_dir: "AI_news/Topics"
+  sources_dir: "AI_news/Sources"
+
+schedule:
+  timezone: "Asia/Shanghai"
+  daily_hour: 7
+
+llm:
+  provider: "anthropic"
+  model_fast: "claude-haiku-4-5"
+  model_deep: "claude-sonnet-4-6"
+  max_items_deep: 5
+  max_items_brief: 20
+  max_items_weak: 5
+  brief_clusters: 4
+  enable_prompt_caching: true
+
+sources:
+  hackernews:
+    enabled: true
+    min_score: 50
+    max_items: 60
+    lookback_hours: 72
+    query: "ai OR llm OR \"machine learning\" OR anthropic OR openai"
+  rss:
+    enabled: true
+    feeds:
+      - name: anthropic-news
+        url: "https://www.anthropic.com/news/rss.xml"
+      - name: openai-blog
+        url: "https://openai.com/blog/rss.xml"
+      - name: huggingface-blog
+        url: "https://huggingface.co/blog/feed.xml"
+      - name: deepmind-blog
+        url: "https://deepmind.google/discover/blog/rss.xml"
+      - name: meta-ai-blog
+        url: "https://ai.meta.com/blog/rss/"
+      - name: microsoft-research
+        url: "https://www.microsoft.com/en-us/research/feed/"
+      - name: nvidia-blog
+        url: "https://blogs.nvidia.com/feed/"
+  github_trending:
+    enabled: true
+    since: "daily"
+    languages: ["python", "typescript"]
+    max_items: 20
+    # optional: GITHUB_TOKEN in .env raises API rate limit for stars/forks/open_issues
+  huggingface:
+    enabled: true
+    papers: true
+    models: true
+    max_papers: 15
+    max_models: 10
+  twitter:
+    enabled: true
+    instance_url: "https://rsshub.app"
+    max_per_account: 6
+    max_age_days: 2
+    accounts:
+      - sama
+      - AnthropicAI
+      - GoogleDeepMind
+      - karpathy
+      - DrJimFan
+      - ylecun
+      - jeffdean
+      - _akhaliq
+
+ranking:
+  weights:
+    score: 0.4
+    comments: 0.3
+    recency_hours: 0.3
+  recency_decay_hours: 48
+
+output:
+  title_language: "en"
+  analysis_language: "zh-CN"
+  keep_terms_in_english: true
+  include_source_excerpt: true
+  include_raw_links: true
+
+run:
+  db_path: "data/news.db"
+  log_path: "data/run.log"
+  dry_run: false

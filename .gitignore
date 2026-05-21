@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local config / secrets
+.env
+config.yaml
+data/
+*.db
+*.db-journal
+
+# Per-machine Claude Code config (Obsidian vault path differs per user).
+# settings.example.json IS committed as a template.
+.claude/settings.json
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db

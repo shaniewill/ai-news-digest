@@ -1,0 +1,92 @@
+[
+  {
+    "id": "hn-sample-001",
+    "title": "Anthropic launches Claude Opus 4.7 with 1M context window",
+    "url": "https://www.anthropic.com/news/claude-opus-4-7",
+    "source": "rss:anthropic-news",
+    "published_at": "2026-05-19T10:00:00+00:00",
+    "score": 0,
+    "comments": 0
+  },
+  {
+    "id": "hn-sample-002",
+    "title": "Show HN: open-source agent framework that runs on tiny VLMs",
+    "url": "https://news.ycombinator.com/item?id=12345001",
+    "source": "hackernews",
+    "published_at": "2026-05-19T05:30:00+00:00",
+    "score": 412,
+    "comments": 137
+  },
+  {
+    "id": "hn-sample-003",
+    "title": "OpenAI cuts API prices on reasoning models for batch tier",
+    "url": "https://openai.com/blog/batch-tier-prices",
+    "source": "rss:openai-blog",
+    "published_at": "2026-05-19T03:10:00+00:00",
+    "score": 0,
+    "comments": 0
+  },
+  {
+    "id": "hn-sample-004",
+    "title": "Paper: Sparse MoE routing beats dense models at 1/3 inference cost",
+    "url": "https://arxiv.org/abs/2605.99999",
+    "source": "hackernews",
+    "published_at": "2026-05-18T22:00:00+00:00",
+    "score": 287,
+    "comments": 64
+  },
+  {
+    "id": "gh-sample-005",
+    "title": "anthropics/skills — Public repository for Agent Skills",
+    "url": "https://github.com/anthropics/skills",
+    "source": "github_trending",
+    "published_at": "2026-05-19T15:50:55+00:00",
+    "score": 4321,
+    "comments": 0
+  },
+  {
+    "id": "hn-sample-006",
+    "title": "EU finalizes second tranche of AI Act enforcement guidelines",
+    "url": "https://example.eu/ai-act-tranche-2",
+    "source": "hackernews",
+    "published_at": "2026-05-19T08:00:00+00:00",
+    "score": 198,
+    "comments": 42
+  },
+  {
+    "id": "hn-sample-007",
+    "title": "Google announces Gemini 3 Pro with native audio reasoning",
+    "url": "https://blog.google/gemini-3-pro",
+    "source": "hackernews",
+    "published_at": "2026-05-19T01:00:00+00:00",
+    "score": 525,
+    "comments": 211
+  },
+  {
+    "id": "hn-sample-008",
+    "title": "Small lab releases 7B model trained on $50K compute, matches Llama-3 70B on MMLU",
+    "url": "https://example.org/small-lab-7b",
+    "source": "hackernews",
+    "published_at": "2026-05-18T18:00:00+00:00",
+    "score": 89,
+    "comments": 23
+  },
+  {
+    "id": "gh-sample-009",
+    "title": "minimaxir/agent-leaderboard — community benchmark for autonomous agents",
+    "url": "https://github.com/minimaxir/agent-leaderboard",
+    "source": "github_trending",
+    "published_at": "2026-05-19T15:50:55+00:00",
+    "score": 612,
+    "comments": 0
+  },
+  {
+    "id": "hn-sample-010",
+    "title": "Nvidia announces H200 successor for AI training, 2x memory bandwidth",
+    "url": "https://nvidianews.example/h300",
+    "source": "hackernews",
+    "published_at": "2026-05-19T11:30:00+00:00",
+    "score": 367,
+    "comments": 98
+  }
+]

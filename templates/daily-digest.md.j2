@@ -1,0 +1,109 @@
+---
+date: {{ p.date }}
+type: daily-digest
+tags: [ai-news, auto]
+sources_count: {{ p.sources_count }}
+items_deep: {{ p.deep | length }}
+items_brief: {{ p.brief_clusters | map(attribute='items') | map('length') | sum }}
+items_weak: {{ p.weak_signals | length }}
+run_id: {{ p.run_id }}
+---
+
+# AI digest — {{ p.date }}
+
+**今日一句话**：{{ p.one_liner or "（curator 未产出）" }}
+
+---
+
+## 🔥 热点深度
+
+{% for d in p.deep %}
+### {{ loop.index }}. {{ d.item.title }}
+
+> 来源：[{{ d.item.source }}]({{ d.item.url }}) · {{ d.item | engagement_line }}
+{% if d.source_excerpt %}
+> 原文摘录：*{{ d.source_excerpt }}*
+{% endif %}
+
+**事实**：{{ d.fact }}
+
+**语境**：{{ d.context }}
+
+**各方观点 / 争议**：{{ d.stakeholders }}
+
+**二阶影响**：{{ d.implications }}
+
+**置信度**：{{ d.confidence }} — {{ d.uncertainty }}
+
+---
+{% endfor %}
+
+## 📡 弱信号雷达
+
+{% if p.weak_signals %}
+{% for it, note in p.weak_signals %}
+- [{{ it.title }}]({{ it.url }}) — {{ note }}
+{% endfor %}
+{% else %}
+（今日无合格弱信号）
+{% endif %}
+
+---
+
+## 🧭 趋势连线
+
+{% if p.trend_links %}
+{% for line in p.trend_links %}
+{{ line }}
+{% endfor %}
+{% else %}
+（暂无）
+{% endif %}
+
+---
+
+## 🔮 预判草稿
+
+{% if p.predictions %}
+{% for pred in p.predictions %}
+- **{{ pred.statement }}**
+  - 依据：{{ pred.rationale }}
+  - 验证时间点：{{ pred.verify_by }}
+  - 证伪条件：{{ pred.falsifiable_when }}
+{% if pred.related_item_url %}
+  - 相关：{{ pred.related_item_url }}
+{% endif %}
+{% endfor %}
+{% else %}
+（今日条目不足以支撑可证伪预判）
+{% endif %}
+
+---
+
+## 📎 速览清单
+
+{% if p.brief_overview %}
+{{ p.brief_overview }}
+{% else %}
+（无 overview）
+{% endif %}
+
+{% for cluster in p.brief_clusters %}
+### {{ cluster.theme }}
+
+{% for it, one_line in cluster.items %}
+- [{{ it.title }}]({{ it.url }}) — {{ one_line or "_（待补充）_" }}
+{% endfor %}
+{% endfor %}
+
+---
+
+## ✍️ 留给你
+
+> 我今天的看法 / 反驳 / 要验证的事：
+>
+> -
+> -
+> -
+
+<!-- run_id: {{ p.run_id }} · 自动生成于 {{ p.date }} -->
